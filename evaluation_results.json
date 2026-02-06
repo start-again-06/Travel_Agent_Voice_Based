@@ -1,0 +1,310 @@
+
+{
+  "overall": {
+    "all_passed": false,
+    "total_evals": 3,
+    "passed_evals": 1,
+    "failed_evals": 2,
+    "pass_rate": 33.33333333333333,
+    "all_issues": [
+      "[grounding] No search results provided. Cannot verify POI grounding.",
+      "[grounding] No 'Travel Tips' section found in itinerary.",
+      "[edit_correctness] Unintended change in section 'day_1': modification (similarity: 27.75%)",
+      "[edit_correctness] Unintended change in section 'day_3': modification (similarity: 43.97%)",
+      "[edit_correctness] Unintended change in section 'day_5': addition (similarity: 0.00%)",
+      "[edit_correctness] Unintended change in section 'day_4': addition (similarity: 0.00%)"
+    ],
+    "total_issues": 6,
+    "evaluation_time_seconds": 0.06871
+  },
+  "evaluations": {
+    "feasibility": {
+      "eval_type": "feasibility",
+      "passed": true,
+      "summary": {
+        "total_days": 5,
+        "total_checks": 15,
+        "passed_checks": 15,
+        "failed_checks": 0
+      },
+      "results": [
+        {
+          "day": 1,
+          "date": "Feb 7",
+          "check": "daily_duration",
+          "passed": true,
+          "total_activities": 3,
+          "total_available_hours": 10,
+          "issues": []
+        },
+        {
+          "day": 1,
+          "date": "Feb 7",
+          "check": "travel_times",
+          "passed": true,
+          "travel_estimates": [],
+          "issues": []
+        },
+        {
+          "day": 1,
+          "date": "Feb 7",
+          "check": "pace_consistency",
+          "passed": true,
+          "num_activities": 3,
+          "morning_activities": 1,
+          "afternoon_activities": 1,
+          "evening_activities": 1,
+          "issues": []
+        },
+        {
+          "day": 2,
+          "date": "Feb 8",
+          "check": "daily_duration",
+          "passed": true,
+          "total_activities": 3,
+          "total_available_hours": 10,
+          "issues": []
+        },
+        {
+          "day": 2,
+          "date": "Feb 8",
+          "check": "travel_times",
+          "passed": true,
+          "travel_estimates": [],
+          "issues": []
+        },
+        {
+          "day": 2,
+          "date": "Feb 8",
+          "check": "pace_consistency",
+          "passed": true,
+          "num_activities": 3,
+          "morning_activities": 1,
+          "afternoon_activities": 1,
+          "evening_activities": 1,
+          "issues": []
+        },
+        {
+          "day": 3,
+          "date": "Feb 9",
+          "check": "daily_duration",
+          "passed": true,
+          "total_activities": 3,
+          "total_available_hours": 10,
+          "issues": []
+        },
+        {
+          "day": 3,
+          "date": "Feb 9",
+          "check": "travel_times",
+          "passed": true,
+          "travel_estimates": [],
+          "issues": []
+        },
+        {
+          "day": 3,
+          "date": "Feb 9",
+          "check": "pace_consistency",
+          "passed": true,
+          "num_activities": 3,
+          "morning_activities": 1,
+          "afternoon_activities": 1,
+          "evening_activities": 1,
+          "issues": []
+        },
+        {
+          "day": 4,
+          "date": "Feb 10",
+          "check": "daily_duration",
+          "passed": true,
+          "total_activities": 3,
+          "total_available_hours": 10,
+          "issues": []
+        },
+        {
+          "day": 4,
+          "date": "Feb 10",
+          "check": "travel_times",
+          "passed": true,
+          "travel_estimates": [],
+          "issues": []
+        },
+        {
+          "day": 4,
+          "date": "Feb 10",
+          "check": "pace_consistency",
+          "passed": true,
+          "num_activities": 3,
+          "morning_activities": 1,
+          "afternoon_activities": 1,
+          "evening_activities": 1,
+          "issues": []
+        },
+        {
+          "day": 5,
+          "date": "Feb 11",
+          "check": "daily_duration",
+          "passed": true,
+          "total_activities": 3,
+          "total_available_hours": 10,
+          "issues": []
+        },
+        {
+          "day": 5,
+          "date": "Feb 11",
+          "check": "travel_times",
+          "passed": true,
+          "travel_estimates": [],
+          "issues": []
+        },
+        {
+          "day": 5,
+          "date": "Feb 11",
+          "check": "pace_consistency",
+          "passed": true,
+          "num_activities": 3,
+          "morning_activities": 1,
+          "afternoon_activities": 1,
+          "evening_activities": 1,
+          "issues": []
+        }
+      ]
+    },
+    "grounding": {
+      "eval_type": "grounding",
+      "passed": false,
+      "summary": {
+        "total_checks": 3,
+        "passed_checks": 1,
+        "failed_checks": 2
+      },
+      "results": [
+        {
+          "check": "poi_grounding",
+          "passed": false,
+          "itinerary_pois": [
+            "Kolumbari"
+          ],
+          "grounded_count": 0,
+          "ungrounded_count": 1,
+          "issues": [
+            "No search results provided. Cannot verify POI grounding."
+          ]
+        },
+        {
+          "check": "tip_citations",
+          "passed": false,
+          "has_tips_section": false,
+          "tips_with_citations": 0,
+          "total_tips": 0,
+          "issues": [
+            "No 'Travel Tips' section found in itinerary."
+          ]
+        },
+        {
+          "check": "uncertainty_markers",
+          "passed": true,
+          "uncertainty_instances": [],
+          "total_uncertainty_markers": 0,
+          "issues": []
+        }
+      ]
+    },
+    "edit_correctness": {
+      "eval_type": "edit_correctness",
+      "passed": false,
+      "summary": {
+        "total_sections_original": 4,
+        "total_sections_edited": 5,
+        "total_changes": 6,
+        "intended_changes": 2,
+        "unintended_changes": 4
+      },
+      "differences": [
+        {
+          "section": "day_1",
+          "similarity": 0.2774774774774775,
+          "original_length": 303,
+          "edited_length": 252,
+          "change_type": "modification"
+        },
+        {
+          "section": "day_3",
+          "similarity": 0.4396887159533074,
+          "original_length": 260,
+          "edited_length": 254,
+          "change_type": "modification"
+        },
+        {
+          "section": "travel_tips",
+          "similarity": 0.0,
+          "original_length": 206,
+          "edited_length": 0,
+          "change_type": "deletion"
+        },
+        {
+          "section": "day_5",
+          "similarity": 0.0,
+          "original_length": 0,
+          "edited_length": 470,
+          "change_type": "addition"
+        },
+        {
+          "section": "day_4",
+          "similarity": 0.0,
+          "original_length": 0,
+          "edited_length": 242,
+          "change_type": "addition"
+        },
+        {
+          "section": "day_2",
+          "similarity": 0.35991820040899797,
+          "original_length": 259,
+          "edited_length": 230,
+          "change_type": "modification"
+        }
+      ],
+      "unintended_changes": [
+        {
+          "section": "day_1",
+          "similarity": 0.2774774774774775,
+          "original_length": 303,
+          "edited_length": 252,
+          "change_type": "modification",
+          "reason": "Section changed but was not in intended edit scope"
+        },
+        {
+          "section": "day_3",
+          "similarity": 0.4396887159533074,
+          "original_length": 260,
+          "edited_length": 254,
+          "change_type": "modification",
+          "reason": "Section changed but was not in intended edit scope"
+        },
+        {
+          "section": "day_5",
+          "similarity": 0.0,
+          "original_length": 0,
+          "edited_length": 470,
+          "change_type": "addition",
+          "reason": "Section changed but was not in intended edit scope"
+        },
+        {
+          "section": "day_4",
+          "similarity": 0.0,
+          "original_length": 0,
+          "edited_length": 242,
+          "change_type": "addition",
+          "reason": "Section changed but was not in intended edit scope"
+        }
+      ],
+      "issues": [
+        "Unintended change in section 'day_1': modification (similarity: 27.75%)",
+        "Unintended change in section 'day_3': modification (similarity: 43.97%)",
+        "Unintended change in section 'day_5': addition (similarity: 0.00%)",
+        "Unintended change in section 'day_4': addition (similarity: 0.00%)"
+      ]
+    }
+  },
+  "timestamp": "2026-01-31T18:02:48.567817"
+}
