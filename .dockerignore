@@ -1,0 +1,50 @@
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+
+# Virtual Environment
+.venv/
+venv/
+ENV/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Git
+.git/
+.gitignore
+
+# Logs
+*.log
+voice_agent.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Model cache (will be downloaded during build)
+models/
+
+# Environment files
+.env.local
+.env.*.local
+
+# Documentation
+README.md
+docs/
+
+# Tests
+tests/
+*.test.py
