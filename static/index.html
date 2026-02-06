@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice Travel Agent</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1>🎙️ Voice Travel Agent</h1>
+            <p class="subtitle">Speak your travel plans, and I'll help you create the perfect itinerary</p>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            <div class="content-grid">
+                <!-- Transcript Display -->
+                <div class="transcript-container">
+                    <div class="transcript-header">
+                        <h2>Live Transcript</h2>
+                        <button id="clearTranscript" class="btn-clear">Clear</button>
+                    </div>
+                    <div id="transcript" class="transcript-content">
+                        <div class="message system-message">
+                            <span class="message-icon">ℹ️</span>
+                            <span class="message-text">Click the microphone button below and start speaking...</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Itinerary Display -->
+                <div class="itinerary-container" id="itineraryContainer" style="display: none;">
+                    <div class="itinerary-header">
+                        <h2>📋 Your Itinerary</h2>
+                        <div class="itinerary-actions">
+                            <button id="emailItineraryBtn" class="btn-email" title="Email this itinerary">
+                                <span class="btn-icon">📧</span>
+                                <span class="btn-text">Email</span>
+                            </button>
+                            <button id="closeItinerary" class="btn-clear">Close</button>
+                        </div>
+                    </div>
+                    <div id="itineraryContent" class="itinerary-content">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Voice Controls -->
+            <div class="controls-container">
+                <div class="controls">
+                    <button id="recordBtn" class="btn btn-record" title="Start Recording">
+                        <span class="btn-icon">🎤</span>
+                        <span class="btn-text">Talk</span>
+                    </button>
+
+                    <button id="stopBtn" class="btn btn-stop" disabled title="Stop Recording">
+                        <span class="btn-icon">⏹️</span>
+                        <span class="btn-text">Stop</span>
+                    </button>
+                </div>
+
+                <!-- Status Indicator -->
+                <div id="status" class="status">
+                    <span class="status-indicator idle"></span>
+                    <span class="status-text">Ready to listen</span>
+                </div>
+            </div>
+
+            <!-- Connection Status -->
+            <div id="connectionStatus" class="connection-status">
+                <span class="connection-indicator connecting"></span>
+                <span>Connecting to server...</span>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            <p>Powered by ElevenLabs, Groq, and LangGraph</p>
+        </footer>
+    </div>
+
+    <!-- Email Modal -->
+    <div id="emailModal" class="modal" style="display: none;">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>📧 Email Your Itinerary</h3>
+                <button id="closeEmailModal" class="modal-close" title="Close">×</button>
+            </div>
+            <div class="modal-body">
+                <p class="modal-description">Enter your email address to receive your personalized travel itinerary.</p>
+                <div class="form-group">
+                    <label for="emailInput">Email Address</label>
+                    <input
+                        type="email"
+                        id="emailInput"
+                        class="email-input"
+                        placeholder="you@example.com"
+                        required
+                    />
+                    <span id="emailError" class="error-message" style="display: none;"></span>
+                </div>
+                <div id="emailSuccess" class="success-message" style="display: none;">
+                    ✅ <span id="successText"></span>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="cancelEmail" class="btn-secondary">Cancel</button>
+                <button id="sendEmail" class="btn-primary">
+                    <span class="btn-spinner" style="display: none;">⏳</span>
+                    <span class="btn-label">Send ✓</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>
