@@ -1,0 +1,53 @@
+
+# Render.com deployment configuration
+# Deploy with: Connect GitHub repo or `render deploy`
+
+services:
+  - type: web
+    name: voice-travel-agent
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+
+    # Environment configuration
+    envVars:
+      - key: GROQ_API_KEY
+        sync: false  # Set in Render dashboard
+      - key: ELEVENLABS_API_KEY
+        sync: false  # Set in Render dashboard
+      - key: RESEND_API_KEY
+        sync: false  # Set in Render dashboard
+      - key: PINECONE_API_KEY
+        sync: false  # Set in Render dashboard
+      - key: FOURSQUARE_SERVICE_API_KEY
+        sync: false  # Set in Render dashboard (optional)
+      - key: FOURSQUARE_CLIENT_ID
+        sync: false  # Set in Render dashboard (optional)
+      - key: FOURSQUARE_CLIENT_SECRET
+        sync: false  # Set in Render dashboard (optional)
+      - key: LOG_LEVEL
+        value: INFO
+      - key: SERVER_PORT
+        value: 8001
+
+    # Persistent disk for model caching
+    disk:
+      name: model-cache
+      mountPath: /app/models
+      sizeGB: 2
+
+    # Health check configuration
+    healthCheckPath: /api/ready
+
+    # Auto-deploy from GitHub
+    autoDeploy: true
+
+    # Instance configuration
+    # Free tier: Use 'free' plan
+    # Production: Use 'starter' ($7/mo) or 'standard' ($25/mo)
+    plan: free
+
+    # Region (choose closest to your users)
+    region: oregon  # Options: oregon, frankfurt, singapore
+
+    # Build command (optional, Docker builds automatically)
+    # buildCommand: echo "Building with Docker"
